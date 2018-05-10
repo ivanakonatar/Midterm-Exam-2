@@ -23,12 +23,58 @@
 ===================================================
 """
 
-# Write your functions here
 
+def Caesar_Cipher_encryption(recenica,broj):
+
+
+
+    nova_recenica = ''
+    lista =['!',' ',',','.',':',';', '/']
+
+
+    for karakter in recenica:
+
+        if karakter not in lista:
+            broj_chr = ord(karakter)
+
+            broj_kriptovanog_slova = broj_chr + broj
+            karakter = chr(broj_kriptovanog_slova)
+
+            nova_recenica += karakter
+
+        else:
+            nova_recenica += karakter
+
+
+    return nova_recenica
+
+
+def decrypt(nova_recenica,broj):
+
+    word = ''
+    lista = ['!', ' ', ',', '.', ':', ';','/']
+
+    for karakt in nova_recenica:
+
+        if karakt not in lista:
+
+            novo_slovo = chr(ord(karakt) - broj)
+            word += novo_slovo
+
+        else:
+            word += karakt
+
+    return word
 
 
 def main():
-    # Test your functions here
+    broj_pomjeranja = int(input("Za koliko mjesta pomjerate svaki karakter? "))
+
+    enkriptovana_recenica = Caesar_Cipher_encryption("Ivana Konatar 11/115.", broj_pomjeranja)
+    print(enkriptovana_recenica)
+    dekriptovana_recenica = decrypt(enkriptovana_recenica,broj_pomjeranja)
+    print(dekriptovana_recenica)
+
     pass
 
 if __name__ == "__main__":

@@ -12,12 +12,23 @@
 ===================================================
 """
 
-# Write your function here
+def sum(lista):
 
+    duzina = len(lista)
+
+    if duzina == 1:
+
+        return lista[0]
+
+    else:
+
+        return sum(lista[1:]) + lista[0]
 
 
 def main():
-    # Test your function here
+    lista= [1,2,3,0,2]
+
+    print("Suma brojeva date liste je: " + str(sum(lista)))
     pass
 
 if __name__ == "__main__":

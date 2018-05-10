@@ -18,12 +18,52 @@
 ===================================================
 """
 
-# Write your function here
+def broj_pojavljivanja_u_listi(lista):
+
+    d= {}
+    duzina = len(lista)
+    broj_javljanja = 0
+
+    for i in range(duzina):
+
+        if lista[i] not in d:
+
+            for broj in range(i,duzina):
+
+
+                if lista[broj] == lista[i]:
+
+                    broj_javljanja += 1
+
+                dati_broj = lista[i]
+
+                d[dati_broj] = broj_javljanja
+        broj_javljanja=0
+
+    niz = []
+
+    for key in d:
+
+        niz.append(d[key])
+    maksimum = niz[0]
+
+    for i in range(len(niz)):
+        if niz[i]  >maksimum:
+            maksimum=niz[i]
+
+
+    for key in d:
+        if maksimum==d[key]:
+            return key
 
 
 
 def main():
-    # Test your function here
+
+    lista = [1,1,1,3,3,6,5,5,5,5]
+    x = broj_pojavljivanja_u_listi(lista)
+
+    print("U datoj listi se najvise pojavljuje broj: " + str (x))
     pass
 
 if __name__ == "__main__":

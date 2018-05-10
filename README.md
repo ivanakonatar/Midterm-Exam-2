@@ -1,7 +1,7 @@
 # Midterm-Exam-2
 
-Name:
+Name: Ivana
 
-Surname:
+Surname: Konatar
 
-Index #:
+Index #: 17/115
